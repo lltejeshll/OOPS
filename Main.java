@@ -77,7 +77,26 @@
 
 
 public class Main{
-    public static void main(){
-        
-    }
+    public static void main(String[] args){
+        BankAccount b1 = new BankAccount(101 , 1000);
+        SavingsAccount s1 = new SavingsAccount(102,2222, 0.5);
+        CurrentAccount c1 = new CurrentAccount(103, 2222, 500);
+
+        b1.deposit(1000);
+        s1.deposit(400);
+        c1.deposit(500);
+
+        b1.withdraw(200);
+        s1.withdraw(100);
+        c1.withdraw(2200);
+
+        b1.CalculateYearlyInterest();
+        s1.CalculateYearlyInterest();
+        c1.CalculateYearlyInterest();
+
+
+        System.out.println("BankAccount balance: " + b1.getBalance());
+        System.out.println("SavingsAccount balance: " + s1.getBalance());
+        System.out.println("CurrentAccount balance: " + c1.getBalance());
+    } 
 }
